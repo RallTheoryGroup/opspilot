@@ -1,0 +1,21 @@
+{
+  "name": "opspilot",
+  "version": "1.0.0",
+  "description": "OpsPilot - DevOps dashboard (Products)",
+  "main": "index.js",
+  "scripts": {
+    "test": "node --test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RallTheoryGroup/opspilot.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/RallTheoryGroup/opspilot/issues"
+  },
+  "homepage": "https://github.com/RallTheoryGroup/opspilot#readme"
+}
