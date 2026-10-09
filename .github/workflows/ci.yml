@@ -12,8 +12,14 @@ jobs:
         with:
           node-version: 22
       - run: npm test
-  ready:
-    needs: test
+  infra:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "Test job passed"
+      - uses: actions/checkout@v5
+      - run: az bicep install
+      - run: az bicep build -f infra/main.bicep
+  ready:
+    needs: [test, infra]
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Tests and Bicep build passed"
