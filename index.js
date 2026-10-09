@@ -1,1 +1,1 @@
-exports.health = () => ({ app: 'OpsPilot', status: 'running' });
+exports.health = () => ({ app: 'Ops Pilot', status: 'running' });
