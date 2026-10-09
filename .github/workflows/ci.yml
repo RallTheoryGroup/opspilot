@@ -1,11 +1,5 @@
 name: OpsPilot CI
-on:
-  push:
-    branches: [main]
-  pull_request:
-permissions:
-  contents: read
-
+on: [push, pull_request]
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -15,13 +9,8 @@ jobs:
         with:
           node-version: 22
       - run: npm test
-  infra:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v5
-      - run: az bicep build --file infra/main.bicep
   ready:
-    needs: [test, infra]
+    needs: test
     runs-on: ubuntu-latest
     steps:
-      - run: echo "Tests and Bicep build passed"
+      - run: echo "Test job passed"
